@@ -1,0 +1,77 @@
+Manifest-Version: 1.0
+Built-By: Generated-by-ADT
+Created-By: Android Gradle 3.2.1
+
+Name: AndroidManifest.xml
+SHA1-Digest: LnFrvS040AuqhKQ8+P5Pmox917o=
+
+Name: assets/flutter_assets/AssetManifest.json
+SHA1-Digest: oG5/OGn+vw7vp/nu5DUDoZJ4nFc=
+
+Name: assets/flutter_assets/FontManifest.json
+SHA1-Digest: 8Eg+f3qfbnydCo65zUUTI2L/o/k=
+
+Name: assets/flutter_assets/LICENSE
+SHA1-Digest: 6Ib5Jwmd1kExL7AHqotcbUHZgg8=
+
+Name: assets/flutter_assets/fonts/MaterialIcons-Regular.ttf
+SHA1-Digest: nIzDzw7hjOThppiX5OleKNAxtqM=
+
+Name: assets/flutter_assets/packages/cupertino_icons/assets/CupertinoI
+ cons.ttf
+SHA1-Digest: AlgKy1FbEPcZcd0kdJLLHtOy68I=
+
+Name: classes.dex
+SHA1-Digest: hQk5Hd007HqUBmh5sQHjSN2q1fQ=
+
+Name: lib/arm64-v8a/lib_isolate_snapshot_data.so
+SHA1-Digest: 5tJjB+NOGKxEUYYbwXUI8Wg6yCw=
+
+Name: lib/arm64-v8a/lib_isolate_snapshot_instr.so
+SHA1-Digest: iS8t0QFXm5BAnN3kUZQjw4oklSY=
+
+Name: lib/arm64-v8a/lib_vm_snapshot_data.so
+SHA1-Digest: Duq3QPXqeBaJ4waynGTq9dI2d7s=
+
+Name: lib/arm64-v8a/lib_vm_snapshot_instr.so
+SHA1-Digest: ToPTUF/PYWulCllYpFfcXts6ENA=
+
+Name: lib/arm64-v8a/libflutter.so
+SHA1-Digest: Vgcnb7eYuTGtbgb+sUszR9k7bsY=
+
+Name: lib/armeabi-v7a/lib_isolate_snapshot_data.so
+SHA1-Digest: T5cZfV/VcfPN4hcdFkjfkPrIl0I=
+
+Name: lib/armeabi-v7a/lib_isolate_snapshot_instr.so
+SHA1-Digest: SocxuW2kEDusoqB0XHl+mSpfSA4=
+
+Name: lib/armeabi-v7a/lib_vm_snapshot_data.so
+SHA1-Digest: FBvrmeWRgEt2EDG3u6fzk26N0Rc=
+
+Name: lib/armeabi-v7a/lib_vm_snapshot_instr.so
+SHA1-Digest: ycIii870Wzwis+eMTgsjcRJUNp0=
+
+Name: lib/armeabi-v7a/libflutter.so
+SHA1-Digest: +iE354+OuJqywYsu/BxYQOI6Efg=
+
+Name: res/drawable/launch_background.xml
+SHA1-Digest: TIB66X039sMXhZwl7OWgXln130M=
+
+Name: res/mipmap-hdpi-v4/ic_launcher.png
+SHA1-Digest: 2wYn95WB3Kn3iKBxCt0Tzj7n1zA=
+
+Name: res/mipmap-mdpi-v4/ic_launcher.png
+SHA1-Digest: wm/hGvwWjF5bb6dM7qpG1xOO1c8=
+
+Name: res/mipmap-xhdpi-v4/ic_launcher.png
+SHA1-Digest: /yViv2JpHSurn0QxelTBQ//3lc8=
+
+Name: res/mipmap-xxhdpi-v4/ic_launcher.png
+SHA1-Digest: u9DeX6AGY1NN9U+Vs8+ZX5XUvss=
+
+Name: res/mipmap-xxxhdpi-v4/ic_launcher.png
+SHA1-Digest: 9K9QsCs7zmQWoXrYrt3rD0GcDj8=
+
+Name: resources.arsc
+SHA1-Digest: YHvt+DzO2820uLDrI9qBhZQ85XY=
+
