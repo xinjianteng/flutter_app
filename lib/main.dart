@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/book/recommend.dart';
 import 'package:flutter_app/book/shelf.dart';
 
-void main() async{
+import 'book/learn.dart';
 
+void main() async {
   runApp(MyApp());
-
 }
 
 class MyApp extends StatelessWidget {
@@ -31,7 +31,7 @@ class MyHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 3,
       initialIndex: 1,
       child: Scaffold(
         appBar: AppBar(
@@ -73,7 +73,9 @@ class MyHome extends StatelessWidget {
         ),
         bottomNavigationBar: Container(
             height: 50,
-            decoration: BoxDecoration(color: Colors.orangeAccent),
+            decoration: BoxDecoration(
+                color: Colors.teal[300],
+      ),
             child: TabBar(
               labelStyle: TextStyle(height: 0, fontSize: 10),
               tabs: <Widget>[
@@ -84,6 +86,10 @@ class MyHome extends StatelessWidget {
                 Tab(
                   icon: Icon(Icons.mouse),
                   text: "推荐",
+                ),
+                Tab(
+                  icon: Icon(Icons.content_paste),
+                  text: "学习",
                 )
               ],
             )),
@@ -93,6 +99,7 @@ class MyHome extends StatelessWidget {
               mt: "第一页",
             ),
             Recommend(),
+            Learn()
           ],
         ),
       ),
