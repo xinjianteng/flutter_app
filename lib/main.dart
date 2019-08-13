@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/book/recommend.dart';
-import 'package:flutter_app/book/shelf.dart';
-
-import 'book/learn.dart';
+import 'package:flutter_app/values/colors.dart';
+import 'package:flutter_app/values/dimens.dart';
+import 'package:flutter_app/values/strings.dart';
+import 'demo/ImageTest.dart';
+import 'module/book/learn.dart';
+import 'module/book/recommend.dart';
+import 'module/book/shelf.dart';
+import 'module/home.dart';
+import 'module/login.dart';
 
 void main() async {
   runApp(MyApp());
@@ -11,16 +16,26 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final appName = 'Tin看书';
     return MaterialApp(
+      //是否显示纸墨设计基础布局网格，用来调试UI的工具。
+      debugShowMaterialGrid: false,
+      //显示性能标签
+      showPerformanceOverlay: false,
+      routes: {
+        '/home': (BuildContext context) => HomePage(),
+        '/login': (BuildContext context) => LoginPage(),
+        '/imageTest': (BuildContext context) => ImageTest(),
+      },
+      initialRoute: '/home',
       title: appName,
+      color: null,
       theme: ThemeData(
         //app整体主题的亮度
         brightness: Brightness.light,
         //app主要部分背景色
-        primaryColor: Colors.lightGreen[600],
+        primaryColor: cLevelOneColor,
         //前景色
-        accentColor: Colors.orange[600],
+        accentColor: cLevelThereColor,
       ),
       home: MyHome(),
     );
@@ -35,12 +50,12 @@ class MyHome extends StatelessWidget {
       initialIndex: 1,
       child: Scaffold(
         appBar: AppBar(
-          //appbar
-          title: Text("Tin看书"),
+          backgroundColor: cLevelOneColor,
+          title: Text("藏书馆flutter版"),
           centerTitle: true,
           actions: <Widget>[
             IconButton(
-              icon: Icon(Icons.search),
+              icon: Icon(Icons.share),
               onPressed: () {},
             )
           ],
@@ -72,23 +87,32 @@ class MyHome extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: Container(
-            height: 50,
+            height: commonBarHeight,
             decoration: BoxDecoration(
-                color: Colors.teal[300],
-      ),
+              color: cLevelOneColor,
+            ),
             child: TabBar(
               labelStyle: TextStyle(height: 0, fontSize: 10),
               tabs: <Widget>[
                 Tab(
-                  icon: Icon(Icons.book),
+                  icon: Icon(
+                    Icons.book,
+                    size: 20,
+                  ),
                   text: "书架",
                 ),
                 Tab(
-                  icon: Icon(Icons.mouse),
+                  icon: Icon(
+                    Icons.mouse,
+                    size: 20,
+                  ),
                   text: "推荐",
                 ),
                 Tab(
-                  icon: Icon(Icons.content_paste),
+                  icon: Icon(
+                    Icons.content_paste,
+                    size: 20,
+                  ),
                   text: "学习",
                 )
               ],
@@ -99,7 +123,8 @@ class MyHome extends StatelessWidget {
               mt: "第一页",
             ),
             Recommend(),
-            Learn()
+//            LoginPage()
+            Learn(),
           ],
         ),
       ),

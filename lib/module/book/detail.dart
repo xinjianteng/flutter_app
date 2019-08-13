@@ -39,7 +39,7 @@ class _BookDetail extends State<BookDetail> {
 
   void getDetail() async {
     var response = await dio.post(
-      "https://data.geeboodata.com:8443/api/book_microservice/BookMicroservice/book/bookDetail",
+      "https://data.geeboodata.com:8443/api/book_microservice/BookMicroservice/module.book/bookDetail",
       data: {
         "appId": "1",
         "platformType": "2",
