@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_app/res/strings.dart';
 
 ///container属性测试用例
 class ContainerTest extends StatelessWidget {
@@ -25,7 +25,7 @@ class ContainerTest extends StatelessWidget {
         decoration: BoxDecoration(
             color: Colors.green,
             gradient: RadialGradient(
-              //背景径向渐变
+                //背景径向渐变
                 colors: [Colors.red, Colors.orange],
                 center: Alignment.topLeft,
                 radius: .98),
@@ -39,16 +39,16 @@ class ContainerTest extends StatelessWidget {
         //唯一的子widget
         child: Text(
           //卡片文字
-          "5.20", style: TextStyle(color: Colors.white, fontSize: 40.0),
+          "5.20111111111", style: TextStyle(color: Colors.red, fontSize: 40.0),
         ),
         //绘制在child前面的装饰
         foregroundDecoration: BoxDecoration(
             image: DecorationImage(
-              fit: BoxFit.fill,
-              image: NetworkImage("http://www.liulongbin.top:3005/images/bg1.jpg"),
-            )),
+          fit: BoxFit.fill,
+          image:
+              NetworkImage(res.testImageUrl),
+        )),
       ),
     );
   }
 }
-

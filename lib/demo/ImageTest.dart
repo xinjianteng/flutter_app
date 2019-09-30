@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/res/strings.dart';
 
 class ImageTest extends StatelessWidget {
+
+
+  final  double size=150.0;
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return ListView(
-
       scrollDirection: Axis.vertical,
       children: <Widget>[
         ContainerDemo(
           child: Column(
             children: <Widget>[
-              Text('加载网络图片 \n'
-                  '宽高120 \n'
-                  'fix:BoxFix.fill '),
+              Text('加载网络图片 宽=120；高=120； fix:BoxFix.none(原始大小)'),
               Image(
                 image: NetworkImage(
-                  'http://p0.so.qhimgs1.com/bdr/326__/t01c44703a9e96eac6a.jpg',
+                  res.testImageMinUrl,
                 ),
-                width: 120.0,
-                height: 120.0,
-                fit: BoxFit.fill,
-                alignment: Alignment.bottomRight,
+                width:size,
+                height:size,
+                fit: BoxFit.none,
               ),
             ],
           ),
@@ -29,21 +30,34 @@ class ImageTest extends StatelessWidget {
         ContainerDemo(
           child: Column(
             children: <Widget>[
-              Text('加载网络图片 \n'
-                  '宽高120 \n'
-                  'fix:BoxFix.contain '),
+              Text('加载网络图片 宽=120；高=120； fix:BoxFix.none(原始大小)'),
               Image(
                 image: NetworkImage(
-                  'http://p0.so.qhimgs1.com/bdr/326__/t01c44703a9e96eac6a.jpg',
+                  res.testImageMinUrl,
                 ),
-                width: 120.0,
-                height: 120.0,
+                width:size,
+                height:size,
                 fit: BoxFit.contain,
-                alignment: Alignment.bottomRight,
               ),
             ],
           ),
         ),
+        ContainerDemo(
+          child: Column(
+            children: <Widget>[
+              Text('加载网络图片 宽=120；高=120； fix:BoxFix.none(原始大小)'),
+              Image(
+                image: NetworkImage(
+                  res.testImageMinUrl,
+                ),
+                width:size,
+                height:size,
+                fit: BoxFit.contain,
+              ),
+            ],
+          ),
+        ),
+
       ],
     );
   }

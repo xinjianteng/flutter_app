@@ -1,27 +1,30 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/module/book/detail.dart';
 import 'package:flutter_app/res/dimens.dart';
 
-import 'detail.dart';
 
 Dio dio = new Dio();
 
 //控件
-class Recommend extends StatefulWidget {
-  Recommend() : super();
+class ClassifyItem extends StatefulWidget {
+  final int bookTypeId;
+
+  ClassifyItem({Key key, @required this.bookTypeId}) : super(key: key);
 
   @override
-  _RecommendState createState() {
+  _ClassifyItemState createState() {
     // TODO: implement createState
-    return _RecommendState();
+    return _ClassifyItemState();
   }
 }
 
-class _RecommendState extends State<Recommend>
+class _ClassifyItemState extends State<ClassifyItem>
     with AutomaticKeepAliveClientMixin {
+
   int pageNo = 1;
-  int pageSize = 10;
+  int pageSize = 100;
   int total = 0;
   var mList = [];
 
@@ -61,7 +64,7 @@ class _RecommendState extends State<Recommend>
               decoration: BoxDecoration(
                   color: Colors.white,
                   gradient: RadialGradient(
-                    //背景径向渐变
+                      //背景径向渐变
                       colors: [Colors.white, Colors.white70],
                       center: Alignment.topLeft,
                       radius: .98),
@@ -106,7 +109,7 @@ class _RecommendState extends State<Recommend>
 
   getRecommendBookList() async {
     var response = await dio.post(
-        "https://data.geeboodata.com:8443/api/findbook_microservice/FindbookMicroService/findbook/queryFindBookChannelList",
+        "https://data.geeboodata.com:8443/api/findbook_microservice/FindbookMicroService/findbook/queryBookListByBookTypeIdAggBookId",
         data: {
           "pageNo": pageNo,
           "pageSize": pageSize,
@@ -117,10 +120,9 @@ class _RecommendState extends State<Recommend>
           "terminalFactory": "Xiaomi",
           "terminalSn": "8613160354392473ccef44b82db7557",
           "terminalName": "Xiaomi Redmi 4",
-          "versionCode": 50271,
-          "versionName": "5.3.3",
-          "bigUserId": 223081,
-          "findChannelId": 2
+          "versionCode": 50336,
+          "versionName": "5.4.1",
+          "bookTypeId": widget.bookTypeId
         });
     var result = response.data;
     var data = result["data"];

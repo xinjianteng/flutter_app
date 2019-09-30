@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
-  LoginPage() : super();
+  static const String ROUTER_NAME = "/LoginPage";
 
   @override
-  _LoginPageState createState() {
-    // TODO: implement createState
-    return new _LoginPageState();
-  }
+  _LoginPageState createState() => new _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
@@ -67,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       margin: EdgeInsets.only(top: 20.0),
                     ),
-                    RaisedButton(onPressed: (){
+                    RaisedButton(onPressed: () {
                       Navigator.pushNamed(context, '/imageTest');
                     })
                   ]))
@@ -85,7 +82,4 @@ class _LoginPageState extends State<LoginPage> {
       print("\n userName:" + userName + " \n password" + password);
     }
   }
-
-
-
 }

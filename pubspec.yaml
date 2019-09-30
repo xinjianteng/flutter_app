@@ -12,7 +12,20 @@ dependencies:
 
   cupertino_icons: ^0.1.2
   english_words: ^3.1.0
-  dio: ^2.1.0
+  dio: ^2.1.7
+  bloc: ^0.14.4
+  flutter_bloc: ^0.18.3
+  equatable: ^0.2.6
+  flare_flutter: ^1.5.4
+  shared_preferences: ^0.5.3+1
+  json_annotation: ^2.4.0
+  path_provider: ^1.1.0
+  cached_network_image: ^1.0.0
+
+  data_plugin:
+    git:
+      url: https://github.com/CCY0122/bmob-flutter-sdk.git
+      path: data_plugin/
 
 dev_dependencies:
   flutter_test:
@@ -23,5 +36,7 @@ flutter:
   uses-material-design: true
   assets:
     - images/ic_launcher.png
+    - images/rocket.png
+    - images/drawer_bg.jpeg
 
 
