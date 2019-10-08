@@ -22,6 +22,12 @@ class StringsZh extends BaseStrings {
   get searchTips => 'hint搜索';
 
   @override
+  get signin => '打卡';
+
+  @override
+  get signined => '已打卡';
+
+  @override
   get username => '用户名';
 
   @override

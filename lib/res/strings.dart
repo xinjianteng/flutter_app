@@ -33,6 +33,11 @@ abstract class Strings {
 
   get searchTips;
 
+  get signin;
+
+  get signined;
+
+
 
   get tabLearn;
 

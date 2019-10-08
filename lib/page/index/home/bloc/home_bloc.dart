@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter_app/entity/bmob_user_entity.dart';
 import 'package:flutter_app/utils/shared_preference_util.dart';
 
 import 'home_event.dart';
@@ -17,6 +18,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   Stream<HomeState> mapEventToState(HomeEvent event) async* {
     if (event is LoadHome) {
       yield* _mapLoadHomeToState();
+    } else if (event is UpdateBmobInfo) {
+      yield* _mapUpdateBmobInfoToState(event.bmobUserEntity);
     }
   }
 
@@ -29,5 +32,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     } else {
       userName = null;
     }
+  }
+
+  //更新用户信息
+  Stream<HomeState> _mapUpdateBmobInfoToState(BmobUserEntity entity) async* {
+    yield HomeLoading();
   }
 }

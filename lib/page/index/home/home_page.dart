@@ -140,7 +140,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       );
                     }),
                     drawer: Drawer(
-                      child: HomeDrawer(),
+                      child: HomeDrawer(
+                        isLogin,
+                        userName,
+                        bmobUserEntity,
+                      ),
                     ),
                     floatingActionButton: Offstage(
                       offstage: false,
