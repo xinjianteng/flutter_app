@@ -1,8 +1,10 @@
 import 'package:equatable/equatable.dart';
+import 'package:flutter_app/entity/banner_entity.dart';
 import 'package:flutter_app/entity/recommend_entity.dart';
+import 'package:flutter_app/entity/recommend_type_entity.dart';
 
 abstract class RecommendState extends Equatable {
-  RecommendState([List props = const []]) : super();
+  RecommendState([List props = const []]) : super(props);
 }
 
 class RecommendUnready extends RecommendState {
@@ -19,29 +21,27 @@ class RecommendLoading extends RecommendState {
   }
 }
 
-class RecommendLoaded extends RecommendState {
+///banner数据加载完成
+class ProjectBannerLoaded extends RecommendState {
+  List<BannerEntity> banners;
+
+  ProjectBannerLoaded(this.banners) : super([banners]);
+
   @override
   String toString() {
-    return 'recommendLoaded{}';
+    return 'RecommendBannerLoaded{banners: ${banners?.length}}';
   }
 }
 
-class RecommendLoadError extends RecommendState {
-  Exception exception;
 
-  RecommendLoadError(this.exception) : super([exception]);
-}
+///项目分类加载完成
+class ProjectTypesLoaded extends RecommendState {
+  List<RecommendTypeEntity> types;
 
-class RecommendDatasLoaded extends RecommendState {
-  List<RecommendEntity> datas;
-  int currentPage;
-  int totalPage;
-
-  RecommendDatasLoaded(this.datas, this.currentPage, this.totalPage)
-      : super([datas, currentPage, totalPage]);
+  ProjectTypesLoaded(this.types) : super([types]);
 
   @override
   String toString() {
-    return 'RecommendDatasLoaded{datas: $datas, currentPage: $currentPage, totalPage: $totalPage}';
+    return 'ProjectTypesLoaded{types: ${types?.length}}';
   }
 }

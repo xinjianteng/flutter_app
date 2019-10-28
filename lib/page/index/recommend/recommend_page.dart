@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/entity/banner_entity.dart';
+import 'package:flutter_app/entity/recommend_type_entity.dart';
 import 'package:flutter_app/entity/recommend_entity.dart';
+import 'package:flutter_app/entity/todo_entity.dart';
 import 'package:flutter_app/page/index/home/bloc/home_bloc.dart';
 import 'package:flutter_app/page/index/recommend/bloc/recommend_event.dart';
 import 'package:flutter_app/page/index/recommend/bloc/recommend_state.dart';
@@ -22,10 +25,12 @@ class RecommendPage extends StatefulWidget {
 
 class _RecommendPageState extends State<RecommendPage> {
   RecommendBloc recommendBloc;
-
   int currentProjectPage;
   int totalProjectPage;
-  List<RecommendEntity> recommendDatas;
+  List<BannerEntity> banners;
+  List<RecommendTypeEntity> projectTypes;
+  List<RecommendEntity> projectDatas;
+  List<TodoEntity> todoDatas;
 
   ///不能直接使用[RecommendLoading]作为是否在加载的依据，原因见[ProjectBloc]
   bool isLoading = false;
@@ -35,30 +40,33 @@ class _RecommendPageState extends State<RecommendPage> {
     // TODO: implement initState
     super.initState();
     recommendBloc = RecommendBloc(BlocProvider.of<HomeBloc>(context));
-    recommendDatas ??= [];
-    recommendDatas.add(RecommendEntity(1, '22',
-        'http://bookqiniu.geeboo.com/751c19a7a22a48a2967c52a4440f0923.png?imageView2/2/w/200'));
-    recommendDatas.add(RecommendEntity(1, '33',
-        'http://bookqiniu.geeboo.com/386120c039ee4845bff004ad5504f132.png?imageView2/2/w/200'));
-    recommendDatas.add(RecommendEntity(1, '44',
-        'http://bookqiniu.geeboo.com/99ab1271dffe4f9282e4e6a3711256db.png?imageView2/2/w/200'));
-    recommendDatas.add(RecommendEntity(1, '55',
-        'http://bookqiniu.geeboo.com/27fe10b2b1514c55aea53db17b539283.png?imageView2/2/w/200'));
+    banners ??= [];
+    projectTypes ??= [];
+    projectDatas ??= [];
+    todoDatas ??= [];
+    currentProjectPage ??= 1;
+    totalProjectPage ??= 1;
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return BlocProviderTree(
       blocProviders: [
-        BlocProvider(
+        BlocProvider<RecommendBloc>(
           builder: (context) => recommendBloc,
         ),
       ],
       child: BlocListenerTree(
           blocListeners: [
-            BlocListener(
+            BlocListener<RecommendEvent,RecommendState>(
               bloc: recommendBloc,
               listener: (context, state) {
+
                 if (state is RecommendLoading) {
                   isLoading = true;
                 } else if (state is RecommendLoaded ||

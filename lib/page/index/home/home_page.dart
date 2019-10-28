@@ -51,6 +51,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     _tabController = TabController(length: tabs.length, vsync: this);
+    //缺
     _tabController.addListener(() {});
     _scrollController = ScrollController();
     _searchTextContriller = TextEditingController();
